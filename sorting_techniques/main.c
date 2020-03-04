@@ -11,7 +11,7 @@ int main() {
   // IterativeMergeSort(A, size);
   // RecursiveMergeSort(A, 0, size - 1);
   // CountSort(A, size);
+  ShellSort(A, size);
   print(A, size);
-
   return 0;
 }

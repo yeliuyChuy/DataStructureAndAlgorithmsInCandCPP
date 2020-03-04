@@ -199,3 +199,23 @@ void CountSort(int A[], int size) {
     }
   }
 }
+
+/* Shell Sort
+for very large list
+O(nLogn)
+*/
+void ShellSort(int A[], int size) {
+  int gap, temp, i, j;
+
+  for (gap = size / 2; gap > 1; gap /= 2) {
+    for (i = gap; i < size; i++) {
+      temp = A[i];
+      j = i - gap;
+      while (j > 0 && A[j] > temp) {
+        A[j + gap] = A[j];
+        j = j - gap;
+      }
+      A[j + gap] = temp;
+    }
+  }
+}
