@@ -221,6 +221,9 @@ void ShellSort(int A[], int size) {
 }
 /* Hash
 Avg successful Search: O(1 + lamda/2)
+Space Requirement for hash table:
+  Linked List: any
+  linear probing: 2*elements size
 */
 struct Node {
   int data;
@@ -257,4 +260,9 @@ struct Node *Search(struct Node *p, int key) {
     p = p->next;
   }
   return NULL;
+}
+int hash(int key) { return key % 10; }
+void Insert(struct Node *H[], int key) {
+  int index = hash(key);
+  SortedInsert(&H[index], key);
 }
